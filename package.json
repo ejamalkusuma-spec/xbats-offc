@@ -1,7 +1,7 @@
 {
   "name": "xbats-offc",
   "version": "1.4.10",
-  "description": "Baileys \u2014 an independently maintained Baileys distribution with integrated MessageBuilder, interactive messages, carousel/native-flow helpers, and Elaina-specific compatibility work.",
+  "description": "Baileys — an independently maintained Baileys distribution with integrated MessageBuilder, interactive messages, carousel/native-flow helpers, and Elaina-specific compatibility work.",
   "main": "src/index.js",
   "types": "src/index.d.ts",
   "type": "module",
@@ -143,5 +143,11 @@
     "tmp": "^0.2.5",
     "underscore": "^1.13.8",
     "yaml@npm:^2.6.1": "^2.8.4"
+  },
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "require": "./lib/index.cjs"
+    }
   }
 }
