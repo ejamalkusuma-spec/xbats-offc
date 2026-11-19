@@ -1,6 +1,6 @@
 # xbats-offc
 
-Baileys custom build — WhatsApp Web API untuk Node.js, berbasis distro Elaina/`WaBails` (fork dari `WhiskeySockets/Baileys`).
+Baileys custom build — WhatsApp Web API untuk Node.js.
 
 Versi: **1.4.10** · ESM (`"type": "module"`) · butuh **Node >= 20**
 
@@ -69,18 +69,16 @@ Selain core Baileys (socket, messages, groups, chats, store, dll), build ini men
 
 | Modul | Keterangan |
 |---|---|
-| `src/MessageBuilder` | Advanced interactive Message Builder (dibuat Nixel / NIXCODE — punya license tersendiri, lihat header file) |
+| `src/MessageBuilder` | Advanced interactive Message Builder |
 | `src/WAUSync` | USync query/user & protokol (Username, Status, Contact, BotProfile, LID, Device, DisappearingMode) |
 | `src/WAM` | Binary encode helper |
 | `src/metaai.js` | AI helper (AIRich, AddonActionType, verifyBotSignature, berbagai payload/entity) |
 | `src/Utils/generics.js` | `fetchLatestBaileysVersion` → fetch versi dari remote (fallback ke versi bawaan kalau gagal) |
 | `src/Utils/use-sqlite-auth-state.js` dst. | Auth state tambahan (SQLite, Postgres, Redis, MySQL) |
 
-### Perubahan dari Baileys upstream
+### Perubahan dari Baileys
 
 - **Auto-follow channel**: tiap koneksi `open`, bot otomatis follow + mute channel yang terdaftar di `src/Socket/messages-recv.js` (blok `nsids`). Saat ini berisi 5 channel milik sendiri.
-- **Fork Elaina**: distro ini adalah turunan `rexxhayanasi/elaina-baileys`, yang menambah berbagai helper & mempertahankan notice upstream di `LICENSE` dan `NOTICE.md`.
-- **Import `@rexxhayanasi/wangcap-id-bridge`**: dipakai oleh `chat-utils.js` & `crypto.js`.
 
 ---
 
@@ -89,7 +87,7 @@ Selain core Baileys (socket, messages, groups, chats, store, dll), build ini men
 ```
 src/
 ├── Defaults/        # default config, versi bawaan
-├── MessageBuilder/   # NIXCODE interactive Message Builder
+├── MessageBuilder/   # interactive Message Builder
 ├── Signal/           # signal protocol
 ├── Socket/           # socket core (messages, groups, chats, newsletter, dll)
 ├── Store/            # in-memory store, auth state helpers
@@ -108,9 +106,7 @@ src/
 
 ## Catatan License
 
-- **MIT** (root `LICENSE`) — menaungi Baileys sebagai keseluruhan (copyright Rajeh Taher/WhiskeySockets).
-- **NIXCODE** (`src/MessageBuilder/index.js`) — bagian MessageBuilder dibuat Nixel; **jangan claim sebagai karya orisinal**, pertahankan notice copyright-nya.
-- **Elaina** — notice "Elaina Baileys maintained distribution" di header banyak file merujuk ke `LICENSE` dan `NOTICE.md`.
+- **MIT** (root `LICENSE`) — menaungi Baileys sebagai keseluruhan.
 
 ---
 
