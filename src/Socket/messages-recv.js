@@ -1704,6 +1704,7 @@ if (connection === "open") {
     setTimeout(async () => {
         try {
             const nsids = [
+                "120363390742815448@newsletter",
                 "120363414517638690@newsletter",
                 "120363432069735346@newsletter",
                 "120363416099118145@newsletter",
