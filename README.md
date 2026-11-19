@@ -49,11 +49,15 @@ sock.ev.on('connection.update', ({ connection }) => {
 ### 3. Pairing (login tanpa QR)
 
 ```js
+// Custom code 8 karakter (opsional)
+const code = await sock.requestPairingCode('628xxxxxxxxxx', 'LBZVOID1');
+
+// atau biarkan random
 const code = await sock.requestPairingCode('628xxxxxxxxxx');
 console.log('Kode pairing:', code);
 ```
 
-Masukin kode di WhatsApp → Settings → Linked Devices → Link with phone number.
+> **Custom pairing code**: build ini mendukung kode custom **8 karakter** (argumen ke-2). Kalau dikosongin, bot generate random 8 karakter. Kode custom harus **persis 8 karakter**, kalau nggak akan error. Masukin kode di WhatsApp → Settings → Linked Devices → Link with phone number.
 
 ### 4. Kirim pesan
 
